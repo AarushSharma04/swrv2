@@ -1,0 +1,314 @@
+:root {
+    --blue: #24305E;
+    --bluergb: 36, 48, 94;
+    --yellow: #F8E9A1;
+    --yellowrgb: 248, 233, 161;
+    --pink: #F76C6C;
+    --pinkrgb: 247, 108, 108;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+.heading {
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.main-nav {
+    height: 80px;
+    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: linear-gradient(to right, var(--pink), #ed7c8b);
+    padding: 0 calc(50px + 2vw);
+    position: fixed;
+    top: 0;
+    border-bottom: 4px solid rgba(var(--yellowrgb), 0.3);
+    line-height: 80px;
+    z-index: 10000;
+    transition: .4s all ease;
+}
+
+.main-nav .computer {
+    padding: 0px 20px;
+    margin: 0px 30px;
+    text-transform: uppercase;
+    font-family: source sans pro, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--blue);
+    position: relative;
+    width: auto;
+    border-bottom: 4px solid transparent;
+    transition: .4s all ease;
+    line-height: 76px;
+    border-top: 4px solid transparent;
+}
+
+.main-nav .mobile {
+    display: none;
+    font-size: 30px;
+    padding: 25px 40px;
+    color: var(--blue);
+    transition: .4s all ease;
+    position: relative;
+}
+
+.main-nav .mobile:hover {
+    background: var(--yellow);
+}
+
+.main-nav .computer:hover {
+    border-bottom: 4px solid #24305E;
+}
+
+.main-nav:hover {
+    border-bottom: 4px solid var(--yellow);
+}
+
+.main-nav .pc {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    line-height: 72px;
+    transition: .2s all ease;
+    display: inline-block;
+}
+
+.main-nav .pc:hover {
+    cursor: pointer;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.home {
+    background: linear-gradient(to right, var(--pink), #ed7c8b);
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center center;
+    padding: 20px;
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.content h1 {
+    text-transform: uppercase;
+    color: var(--blue);
+    font-weight: 600;
+    font-size: 80px;
+    font-family: source sans pro, sans-serif;
+    margin: 20px 0;
+}
+
+.content p {
+    font-size: 20px;
+    margin: 20px 0 40px 0;
+    font-weight: 600;
+    font-family: source sans pro, sans-serif;
+    text-transform: uppercase;
+    color: var(--blue);
+}
+
+.content a {
+    padding: 10px 20px;
+    background: var(--yellow);
+    border-radius: 40px;
+    text-transform: uppercase;
+    font-family: source sans pro, sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 18px;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    transition: .4s all ease;
+    position: relative;
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    animation-play-state: running;
+}
+
+.content a:hover, .content a:focus, .content a:active {             
+    background-color: transparent;
+    animation: spin;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.star {
+    height: 200px;
+    width: 200px;
+    background: url(../media/star.png);
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(-10deg);
+    z-index: 100;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    animation: starry 0.5s 1s infinite alternate;
+    transition: .4s all ease;
+}
+
+@keyframes starry {
+    from {
+        transform: translate(-50%, -50%) rotate(-10deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(20deg);
+    }
+}
+
+.star1 {
+    top: 20%;
+    left: 10%;
+    display: block;
+    animation-delay: 1s;
+}
+
+.star2 {
+    top: 80%;
+    right: 5%;
+    animation-delay: 1.75s;
+    display: block;
+}
+
+.star3 {
+    top: 20%;
+    right: 0%;
+    animation-delay: 2.3s;
+    display: block;
+}
+
+.star4 {
+    top: 80%;
+    left: 30%;
+    animation-delay: 3.4s;
+    display: block;
+}
+
+.remove {
+    display: inline-block;
+}
+
+@media only screen and (max-width:1075px) {
+    .main-nav {
+        text-align: center;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .main-nav .computer {
+        display: none;
+    }
+
+    .main-nav .mobile {
+        display: inline-block;
+    }
+
+    .main-nav .fa-cart-plus {
+        display: none;
+    }
+
+    .content h1 {
+        font-size: 65px;
+    }
+    
+    .star1 {
+        top: 20%;
+        left: 50%;
+    }
+    
+    .star2 {
+        top: 80%;
+        left: 50%;
+    }
+
+    .star3, .star4 {
+        display: none;
+    }
+
+    .content a:hover, .content a:focus, .content a:active {
+        background-color: transparent;
+    }
+}
+
+@media only screen and (max-width:775px) {
+    .main-nav .mobile {
+        font-size: 25px;
+        padding: 25px 30px;
+    }
+    
+    .content {
+        width: 95%;
+    }
+
+    .content h1 {
+        font-size: 50px;
+    }
+
+    .star1 {
+        top: 20%;
+        left: 50%;
+    }
+    
+    .star2 {
+        top: 80%;
+        left: 50%;
+    }
+
+    .star3, .star4 {
+        display: none;
+    }
+
+    .content a:hover, .content a:focus, .content a:active {
+        background-color: transparent;
+    }
+}
+
+.updates {
+    height: 100vh;
+}
