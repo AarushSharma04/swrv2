@@ -256,6 +256,11 @@ li {
     .content h1 {
         font-size: 65px;
     }
+
+    .star {
+        height: 150px;
+        width: 150px;
+    }
     
     .star1 {
         top: 20%;
@@ -277,6 +282,11 @@ li {
 }
 
 @media only screen and (max-width:775px) {
+    .star {
+        height: 100px;
+        width: 100px;
+    }
+
     .main-nav .mobile {
         font-size: 25px;
         padding: 25px 30px;
